@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>State - View All</title>
+</head>
+    <body>
+        <h1>States</h1>
+        <a href="/state/add">Add New State</a> <br /> <br />
+
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+            <% for(var i = 0; i < states.length; i++) { %>
+            <tr>
+                <td>
+                    <a href="/state/?state_id=<%= states[i].state_id %>">
+                        <%= states[i].state_id %>
+                    </a>
+
+                </td>
+
+                <td>
+                    <a href="/state/?state_id=<%= states[i].state_id %>">
+                        <%= states[i].state_name %>
+                    </a>
+
+                </td>
+
+
+                <td>
+                    <a href='/state/edit/?state_id=<%= states[i].state_id %>'>
+                        Edit
+                    </a>
+                </td>
+
+            </tr>
+            <% } %>
+        </table>
+    </body>
+</html>

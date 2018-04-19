@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PLayer - Add</title>
+</head>
+<body>
+<h1>Add New Player</h1>
+<form action="/player/update" method="get">
+    first_name: <input
+            id="first_name"
+            name="first_name"
+            type="text"
+            value="<%= player.first_name%>"
+
+    />
+
+    last_name: <input
+            id="last_name"
+            name="last_name"
+            type="text"
+            value="<%= player.last_name%>"
+
+    />
+
+    player_team: <input
+            id="player_team"
+            name="player_team"
+            type="text"
+            value="<%= player.player_team%>"
+
+    />
+
+    jersey_number: <input
+            id="jersey_number"
+            name="jersey_number"
+            type="text"
+            value="<%= player.jersey_number%>"
+
+    />
+
+    position: <input
+            id="position"
+            name="position"
+            type="text"
+            value="<%= player.position%>"
+
+    />
+
+    height: <input
+            id="height"
+            name="height"
+            type="text"
+            value="<%= player.height%>"
+
+    />
+
+    weight: <input
+            id="weight"
+            name="weight"
+            type="text"
+            value="<%= player.weight%>"
+
+    />
+
+
+
+    <input type="hidden"
+           id="player_id"
+           name="player_id"
+           value="<%= player.player_id %>"
+    />
+
+    <br />
+    <input type="submit" />
+</form>
+</body>
+</html>

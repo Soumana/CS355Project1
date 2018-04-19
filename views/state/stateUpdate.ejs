@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>State - Add</title>
+</head>
+<body>
+<h1>Add New State</h1>
+<form action="/state/update" method="get">
+    state_name: <input
+            id="state_name"
+            name="state_name"
+            type="text"
+            value="<%= state.state_name%>"
+
+    />
+
+
+    <input type="hidden"
+           id="state_id"
+           name="state_id"
+           value="<%= state.state_id %>"
+    />
+
+    <br />
+    <input type="submit" />
+</form>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Owner - Add</title>
+    </head>
+    <body>
+        <h1>Add New Owner</h1>
+        <form action="/owner/update" method="get">
+        first_name: <input
+            id="first_name"
+            name="first_name"
+            type="text"
+            value="<%= owner.first_name%>"
+
+            />
+
+        last_name: <input
+            id="last_name"
+            name="last_name"
+            type="text"
+            value="<%= owner.last_name%>"
+
+            />
+
+        owner_team: <input
+            id="owner_team"
+            name="owner_team"
+            type="text"
+            value="<%= owner.owner_team%>"
+
+            />
+
+
+
+        <input type="hidden"
+           id="owner_id"
+           name="owner_id"
+           value="<%= owner.owner_id %>"
+            />
+
+            <br />
+            <input type="submit" />
+        </form>
+    </body>
+</html>
