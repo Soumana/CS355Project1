@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Query9 - View All</title>
+</head>
+<body>
+<h1>Query 9</h1>
+
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Team Name/Owner Name</th>
+
+
+    </tr>
+    <% for(var i = 0; i < teams.length; i++) { %>
+    <tr>
+        <td>
+            <%= teams[i].team_id %>
+
+
+        </td>
+
+        <td>
+            <%= teams[i].team_name %>
+
+
+        </td>
+
+
+
+
+
+
+
+
+
+
+    </tr>
+    <% } %>
+</table>
+
+</body>
+</html>

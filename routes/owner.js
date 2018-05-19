@@ -9,7 +9,7 @@ router.get('/all', function(req, res, next) {
             res.send(err);
         } else {
             console.log(result);
-            res.render('owner/owner_view_all', {owners: result[0], first_name: result, last_name: result, owner_team: result});
+            res.render('owner/owner_view_all', {owners: result[0], first_name: result, last_name: result, owner_team: result, was_successful_delete: req.query.was_successful_delete});
         }
 
     })
@@ -50,6 +50,18 @@ router.get('/update', function(req, res) {
             res.redirect(302, '/owner/all');
         }
     });
+});
+
+router.get('/delete', function(req, res) {
+    owner_dal.delete(req.query, function(err, result) {
+        if (err)
+            res.send(err);
+        else
+            res.redirect(302, '/owner/all' + "?&was_successful_delete=1");
+
+
+    });
+
 });
 
 module.exports = router;

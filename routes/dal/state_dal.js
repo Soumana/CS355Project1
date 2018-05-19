@@ -40,3 +40,13 @@ exports.update = function(params, callback) {
     });
 
 };
+
+exports.delete = function(params, callback) {
+    var query = 'Delete FROM state WHERE state_id = ?';
+    var queryData = [params.state_id];
+
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result)
+
+    });
+};

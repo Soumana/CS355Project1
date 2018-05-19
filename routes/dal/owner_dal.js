@@ -40,3 +40,14 @@ exports.update = function(params, callback) {
     });
 
 };
+
+
+exports.delete = function(params, callback) {
+    var query = 'Delete FROM owner WHERE owner_id = ?';
+    var queryData = [params.owner_id];
+
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result)
+
+    });
+};

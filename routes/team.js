@@ -9,7 +9,7 @@ router.get('/all', function(req, res, next) {
             res.send(err);
         } else {
             console.log(result);
-            res.render('team/team_view_all', {teams: result[0], team_name: result, team_state: result});
+            res.render('team/team_view_all', {teams: result[0], team_name: result, team_state: result, was_successful_delete: req.query.was_successful_delete});
         }
 
     })
@@ -50,6 +50,18 @@ router.get('/update', function(req, res) {
             res.redirect(302, '/team/all');
         }
     });
+});
+
+router.get('/delete', function(req, res) {
+    team_dal.delete(req.query, function(err, result) {
+        if (err)
+            res.send(err);
+        else
+            res.redirect(302, '/team/all' + "?&was_successful_delete=1");
+
+
+    });
+
 });
 
 

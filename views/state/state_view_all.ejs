@@ -16,15 +16,13 @@
             <% for(var i = 0; i < states.length; i++) { %>
             <tr>
                 <td>
-                    <a href="/state/?state_id=<%= states[i].state_id %>">
-                        <%= states[i].state_id %>
+                    <%= states[i].state_id %>
                     </a>
 
                 </td>
 
                 <td>
-                    <a href="/state/?state_id=<%= states[i].state_id %>">
-                        <%= states[i].state_name %>
+                    <%= states[i].state_name %>
                     </a>
 
                 </td>
@@ -33,11 +31,18 @@
                 <td>
                     <a href='/state/edit/?state_id=<%= states[i].state_id %>'>
                         Edit
+
+                        <a href="/state/delete?state_id=<%= states[i].state_id %>">Delete</a>
                     </a>
                 </td>
 
             </tr>
             <% } %>
         </table>
+        <% if(locals.was_successful_delete) { %>
+        <div>
+            <p>State successfully deleted</p>
+        </div>
+        <% } %>
     </body>
 </html>

@@ -10,7 +10,7 @@ router.get('/all', function(req, res, next) {
         } else {
             console.log(result);
             res.render('player/player_view_all',
-                {players: result[0], first_name: result, last_name: result, player_team: result, jersey_number: result, position: result, height: result, weight: result});
+                {players: result[0], first_name: result, last_name: result, player_team: result, jersey_number: result, position: result, height: result, weight: result, was_successful_delete: req.query.was_successful_delete});
         }
 
     })
@@ -51,6 +51,18 @@ router.get('/update', function(req, res) {
             res.redirect(302, '/player/all');
         }
     });
+});
+
+router.get('/delete', function(req, res) {
+    player_dal.delete(req.query, function(err, result) {
+        if (err)
+            res.send(err);
+        else
+            res.redirect(302, '/player/all' + "?&was_successful_delete=1");
+
+
+    });
+
 });
 
 module.exports = router;

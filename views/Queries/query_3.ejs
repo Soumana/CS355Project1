@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Query3 - View All</title>
+</head>
+<body>
+<h1>Query 3</h1>
+
+
+<table border="1">
+    <tr>
+        <th>First name</th>
+        <th>Last Name</th>
+        <th>Player Team</th>
+
+    </tr>
+    <% for(var i = 0; i < players.length; i++) { %>
+    <tr>
+        <td>
+            <%= players[i].first_name %>
+
+
+        </td>
+
+        <td>
+            <%= players[i].last_name %>
+
+
+        </td>
+
+        <td>
+            <%= players[i].player_team %>
+
+
+        </td>
+
+
+
+
+
+
+    </tr>
+    <% } %>
+</table>
+
+</body>
+</html>

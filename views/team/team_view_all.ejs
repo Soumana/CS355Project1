@@ -17,33 +17,37 @@
             <% for(var i = 0; i < teams.length; i++) { %>
             <tr>
                 <td>
-                    <a href="/team/?team_id=<%= teams[i].team_id %>">
-                        <%= teams[i].team_id %>
+                    <%= teams[i].team_id %>
                     </a>
 
                 </td>
 
                 <td>
-                    <a href="/team/?team_id=<%= teams[i].team_id %>">
-                        <%= teams[i].team_name %>
+                    <%= teams[i].team_name %>
                     </a>
 
                 </td>
 
                 <td>
-                    <a href="/team/?team_id=<%= teams[i].team_id %>">
-                        <%= teams[i].team_state %>
+                    <%= teams[i].team_state %>
                     </a>
                 </td>
 
                 <td>
                     <a href='/team/edit/?team_id=<%= teams[i].team_id %>'>
                         Edit
+
+                        <a href="/team/delete?team_id=<%= teams[i].team_id %>">Delete</a>
                     </a>
                 </td>
 
             </tr>
             <% } %>
         </table>
+        <% if(locals.was_successful_delete) { %>
+        <div>
+            <p>Team successfully deleted</p>
+        </div>
+        <% } %>
     </body>
 </html>

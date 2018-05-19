@@ -22,51 +22,43 @@
             <% for(var i = 0; i < players.length; i++) { %>
             <tr>
                 <td>
-                    <a href="/player/?player_id=<%= players[i].player_id %>">
-                        <%= players[i].player_id %>
+                    <%= players[i].player_id %>
                     </a>
 
                 </td>
 
                 <td>
-                    <a href="/player/?player_id=<%= players[i].player_id %>">
-                        <%= players[i].first_name %>
+                    <%= players[i].first_name %>
                     </a>
 
                 </td>
 
                 <td>
-                    <a href="/player/?player_id=<%= players[i].player_id %>">
-                        <%= players[i].last_name %>
+                    <%= players[i].last_name %>
                     </a>
                 </td>
                 <td>
-                    <a href="/player/?player_id=<%= players[i].player_id %>">
-                        <%= players[i].player_team %>
-                    </a>
-                </td>
-
-                <td>
-                    <a href="/player/?player_id=<%= players[i].player_id %>">
-                        <%= players[i].jersey_number %>
+                    <%= players[i].player_team %>
                     </a>
                 </td>
 
                 <td>
-                    <a href="/player/?player_id=<%= players[i].player_id %>">
-                        <%= players[i].position %>
+                    <%= players[i].jersey_number %>
                     </a>
                 </td>
 
                 <td>
-                    <a href="/player/?player_id=<%= players[i].player_id %>">
-                        <%= players[i].height %>
+                    <%= players[i].position %>
                     </a>
                 </td>
 
                 <td>
-                    <a href="/player/?player_id=<%= players[i].player_id %>">
-                        <%= players[i].weight %>
+                    <%= players[i].height %>
+                    </a>
+                </td>
+
+                <td>
+                    <%= players[i].weight %>
                     </a>
                 </td>
 
@@ -74,11 +66,18 @@
                 <td>
                     <a href='/player/edit/?player_id=<%= players[i].player_id %>'>
                         Edit
+
+                        <a href="/player/delete?player_id=<%= players[i].player_id %>">Delete</a>
                     </a>
                 </td>
 
             </tr>
             <% } %>
         </table>
+        <% if(locals.was_successful_delete) { %>
+        <div>
+            <p>Player successfully deleted</p>
+        </div>
+        <% } %>
     </body>
 </html>

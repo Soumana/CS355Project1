@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Query8 - View All</title>
+</head>
+<body>
+<h1>Query 8</h1>
+
+
+<table border="1">
+    <tr>
+        <th>First name</th>
+        <th>Last Name</th>
+        <th>Owner Team</th>
+    </tr>
+    <% for(var i = 0; i < owners.length; i++) { %>
+    <tr>
+        <td>
+            <%= owners[i].first_name %>
+
+
+        </td>
+
+        <td>
+            <%= owners[i].last_name %>
+
+
+        </td>
+
+        <td>
+            <%= owners[i].owner_team %>
+
+
+        </td>
+
+
+
+
+    </tr>
+    <% } %>
+</table>
+
+</body>
+</html>

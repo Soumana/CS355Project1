@@ -40,3 +40,13 @@ exports.update = function(params, callback) {
     });
 
 };
+
+exports.delete = function(params, callback) {
+    var query = 'Delete FROM player WHERE player_id = ?';
+    var queryData = [params.player_id];
+
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result)
+
+    });
+};

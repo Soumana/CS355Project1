@@ -11,6 +11,7 @@ var state = require('./routes/state');
 var team = require('./routes/team');
 var player = require('./routes/player');
 var owner = require('./routes/owner');
+var queries = require('./routes/queries');
 
 
 
@@ -34,7 +35,7 @@ app.use('/state', state);
 app.use('/team', team);
 app.use('/player', player);
 app.use('/owner', owner);
-
+app.use('/queries', queries);
 
 
 // catch 404 and forward to error handler

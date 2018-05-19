@@ -18,27 +18,23 @@
             <% for(var i = 0; i < owners.length; i++) { %>
                 <tr>
                     <td>
-                        <a href="/owner/?owner_id=<%= owners[i].owner_id %>">
-                            <%= owners[i].owner_id %>
+                        <%= owners[i].owner_id %>
                         </a>
 
                     </td>
 
                     <td>
-                        <a href="/owner/?owner_id=<%= owners[i].owner_id %>">
-                            <%= owners[i].first_name %>
+                        <%= owners[i].first_name %>
                         </a>
 
                     </td>
 
                     <td>
-                        <a href="/owner/?owner_id=<%= owners[i].owner_id %>">
-                            <%= owners[i].last_name %>
+                        <%= owners[i].last_name %>
                         </a>
                     </td>
                     <td>
-                        <a href="/owner/?owner_id=<%= owners[i].owner_id %>">
-                            <%= owners[i].owner_team %>
+                        <%= owners[i].owner_team %>
                         </a>
                     </td>
 
@@ -46,11 +42,20 @@
                     <td>
                         <a href='/owner/edit/?owner_id=<%= owners[i].owner_id %>'>
                             Edit
+
+                        <a href="/owner/delete?owner_id=<%= owners[i].owner_id %>">Delete</a>
+
                         </a>
                     </td>
 
                 </tr>
             <% } %>
         </table>
+        <% if(locals.was_successful_delete) { %>
+        <div>
+            <p>Owner Successful deleted</p>
+        </div>
+        <% } %>
     </body>
 </html>
+

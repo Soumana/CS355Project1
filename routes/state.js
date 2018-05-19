@@ -9,7 +9,7 @@ router.get('/all', function(req, res, next) {
             res.send(err);
         } else {
             console.log(result);
-            res.render('state/state_view_all', {states: result[0], state_name: result});
+            res.render('state/state_view_all', {states: result[0], state_name: result, was_successful_delete: req.query.was_successful_delete});
         }
 
     })
@@ -52,6 +52,16 @@ router.get('/update', function(req, res) {
     });
 });
 
+router.get('/delete', function(req, res) {
+    state_dal.delete(req.query, function(err, result) {
+        if (err)
+            res.send(err);
+        else
+            res.redirect(302, '/state/all' + "?&was_successful_delete=1");
 
+
+    });
+
+});
 
 module.exports = router;
